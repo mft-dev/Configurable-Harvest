@@ -1,13 +1,8 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Configurable_Harvest
 {
-    [HarmonyPatch]
+	[HarmonyPatch]
     public class Patcher
     {
         // DropOnDestroyed: name=MineRock_Tin(Clone), m_dropWhenDestroyed=m_dropChance=1, m_dropMin=3, m_dropMax=4, m_oneOfEach=False, m_drops=[m_item=TinOre, m_stackMin=1, m_stackMax=1, m_weight=1]

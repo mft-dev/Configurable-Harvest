@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Configurable_Harvest
+﻿namespace Configurable_Harvest
 {
-    public class DropTableDropDataMod
+	public class DropTableDropDataMod
     {
         public string ItemName { get; set; }
         public float Weight { get; set; }

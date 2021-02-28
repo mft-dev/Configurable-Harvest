@@ -1,14 +1,9 @@
-﻿using System;
+﻿using BepInEx.Configuration;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BepInEx;
-using BepInEx.Configuration;
 
 namespace Configurable_Harvest
 {
-    public static class PluginConfig
+	public static class PluginConfig
     {
 		#region INI Entry Description strings
 		private const string DropChanceDesc = "The chance that the drop table will select an entry. Factor range from 0 to 1. 1 meaning 1=100%, 0=0%, 0.5=50%";

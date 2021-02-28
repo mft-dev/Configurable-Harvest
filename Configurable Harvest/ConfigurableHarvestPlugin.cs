@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using BepInEx;
-using BepInEx.Configuration;
+﻿using BepInEx;
 using HarmonyLib;
-using UnityEngine;
 
 namespace Configurable_Harvest
 {
-    [BepInPlugin("dk.mft_dev.configurable_harvest", "Configurable Harvest", "1.0.0.0")]
+	[BepInPlugin("dk.mft_dev.configurable_harvest", "Configurable Harvest", "1.0.0.0")]
     [BepInProcess("valheim.exe")]
     public class ConfigurableHarvestPlugin: BaseUnityPlugin
     {

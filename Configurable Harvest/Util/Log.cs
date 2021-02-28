@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Configurable_Harvest
 {
-    public static class Log
+	public static class Log
     {
         private static string _filename = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "cfg_harvest.log");
         private static List<string> _logLines = new List<string>();
