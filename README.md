@@ -39,9 +39,9 @@ The configuration mirrors the game's own definition of a drop table.
 - DropTable DropMin: Minimum number of times the drop table is activated
 - DropTable DropMax: Maximum number of times the drop table is activated
 
-- DropTable <ItemName> Weight: The weight this item has in the RNG decision
-- DropTable <ItemName> Min: Minimum stack size if the item is dropped
-- DropTable <ItemName> Max: Maximum stack size if the item is dropped
+- DropTable [ItemName] Weight: The weight this item has in the RNG decision
+- DropTable [ItemName] Min: Minimum stack size if the item is dropped
+- DropTable [ItemName] Max: Maximum stack size if the item is dropped
 
 # Example
 
