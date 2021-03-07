@@ -15,7 +15,7 @@ namespace Configurable_Harvest
 
         private static void LogString(string s)
         {
-            File.AppendAllLines(_filename, new[] { $"[{DateTime.Now.ToShortTimeString()}] {s}" });
+            File.AppendAllLines(_filename, new[] { $"[{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}] {s}" });
         }
 
         public static void LogOnce(MineRock5 m)

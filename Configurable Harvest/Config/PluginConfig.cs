@@ -18,11 +18,12 @@ namespace Configurable_Harvest
 		public static DropTableMod Tin { get; set; }
         public static DropTableMod Copper { get; set; }
         public static DropTableMod Iron { get; set; }
+        public static DropTableMod Obsidian { get; set; }
 
         public static void LoadConfiguration(ConfigFile cfg)
         {
             #region Plugin Config
-
+            
             EnableResourceLogging = cfg.Bind("Plugin", "Log Resources Found", false, "Writes a log entry every time a new resource is discovered by the plugin. Used for development. Log file is written to 'cfg_harvest.log' in the Plugins folder").Value;
 
             #endregion
@@ -113,6 +114,31 @@ namespace Configurable_Harvest
                     }
                 }
             };
+            #endregion
+
+            #region Osbidian Config
+            //[3/7/2021 12:11 PM] [DropOnDestroyed] name=MineRock_Obsidian(Clone), m_dropWhenDestroyed=m_dropChance=1, m_dropMin=5, m_dropMax=8, m_oneOfEach=False, m_drops=[m_item=Obsidian, m_stackMin=1, m_stackMax=1, m_weight=1]
+
+            Obsidian = new DropTableMod()
+            {
+                Enabled = cfg.Bind("Obsidian", "Enabled", false, "Enable changes for obsidian deposits").Value,
+                DropChance = cfg.Bind("Obsidian", "DropChance", 1.0f, DropChanceDesc).Value,
+                OneOfEach = cfg.Bind("Obsidian", "DropTable OneOfEach", false, OneOfEachDesc).Value,
+                DropMin = cfg.Bind("Obsidian", "DropTable DropMin", 5, DropMinDesc).Value,
+                DropMax = cfg.Bind("Obsidian", "DropTable DropMax", 8, DropMaxDesc).Value,
+                Entries = new List<DropTableDropDataMod>()
+                {
+                    new DropTableDropDataMod()
+                    {
+                        ItemName = "TinOre",
+                        Weight = cfg.Bind("Obsidian", "DropTable Obsidian Weight", 1.0f, DropDataWeightDesc).Value,
+                        StackMin = cfg.Bind("Obsidian", "DropTable Obsidian Min", 1, DropDataMinStackDesc).Value,
+                        StackMax = cfg.Bind("Obsidian", "DropTable Obsidian Max", 1, DropDataMaxStackDesc).Value,
+                    }
+                }
+            };
+
+
             #endregion
         }
 

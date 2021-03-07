@@ -27,7 +27,14 @@ namespace Configurable_Harvest
                 int dataIndex = dt.m_drops.FindIndex(x => x.m_item.name == dtDesc.ItemName);
                 if (dataIndex >= 0 && dataIndex < dt.m_drops.Count)
                 {
-                    dt.m_drops[dataIndex] = dtDesc.CreateFrom(dt.m_drops[dataIndex]);
+                    try
+                    {
+                        dt.m_drops[dataIndex] = dtDesc.CreateFrom(dt.m_drops[dataIndex]);
+                    }
+                    catch (Exception ex)
+					{
+                        ConfigurableHarvestPlugin.LogInfo(BepInEx.Logging.LogLevel.Error, $"Failed modifying DropTable! Exception: {ex.ToString()}");
+					}
                 }
             }
         }

@@ -8,17 +8,17 @@ namespace Configurable_Harvest
     {
         public static string DropOnDestroyedToString(DropOnDestroyed x)
         {
-            return $"name={x.name}, m_dropWhenDestroyed={DropTableToString(x.m_dropWhenDestroyed)}";
+            return $"[{x.GetType().Name}] name={x.name}, m_dropWhenDestroyed={DropTableToString(x.m_dropWhenDestroyed)}";
 
         }
         public static string MineRockToString(MineRock x)
         {
-            return $"name={x.name}, m_name={x.m_name}, m_dropItems={DropTableToString(x.m_dropItems)}";
+            return $"[{x.GetType().Name}] name={x.name}, m_name={x.m_name}, m_dropItems={DropTableToString(x.m_dropItems)}";
         }
 
         public static string MineRock5ToString(MineRock5 x)
         {
-            return $"name={x.name}, m_name={x.m_name}, m_dropItems={DropTableToString(x.m_dropItems)}";
+            return $"[{x.GetType().Name}] name={x.name}, m_name={x.m_name}, m_dropItems={DropTableToString(x.m_dropItems)}";
         }
 
         public static string DropTableToString(DropTable x)
