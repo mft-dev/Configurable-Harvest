@@ -27,7 +27,20 @@ namespace Configurable_Harvest
                 }
             }
             //[3/7/2021 12:11 PM] [DropOnDestroyed] name=MineRock_Obsidian(Clone), m_dropWhenDestroyed=m_dropChance=1, m_dropMin=5, m_dropMax=8, m_oneOfEach=False, m_drops=[m_item=Obsidian, m_stackMin=1, m_stackMax=1, m_weight=1]
-
+            if (__instance.name == "MineRock_Obsidian(Clone)" && PluginConfig.Obsidian.Enabled)
+			{
+                if (__instance.m_dropWhenDestroyed != null)
+                {
+                    try
+                    {
+                        PluginConfig.Obsidian.ModifyDropTable(__instance.m_dropWhenDestroyed);
+                    }
+                    catch (Exception ex)
+                    {
+                        ConfigurableHarvestPlugin.LogInfo(BepInEx.Logging.LogLevel.Error, $"Failed applying modification to Obsidian: {ex.ToString()}");
+                    }
+                }
+            }
             Log.LogOnce(__instance);
         }
         [HarmonyPrefix]
