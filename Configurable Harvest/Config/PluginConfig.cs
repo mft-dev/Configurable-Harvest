@@ -130,7 +130,7 @@ namespace Configurable_Harvest
                 {
                     new DropTableDropDataMod()
                     {
-                        ItemName = "TinOre",
+                        ItemName = "Obsidian",
                         Weight = cfg.Bind("Obsidian", "DropTable Obsidian Weight", 1.0f, DropDataWeightDesc).Value,
                         StackMin = cfg.Bind("Obsidian", "DropTable Obsidian Min", 1, DropDataMinStackDesc).Value,
                         StackMax = cfg.Bind("Obsidian", "DropTable Obsidian Max", 1, DropDataMaxStackDesc).Value,
